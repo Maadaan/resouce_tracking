@@ -1,11 +1,13 @@
 from django.contrib import messages
 from django.contrib.auth import authenticate, login
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from .forms import RegistrationForm, HospitalForm, DoctorForm, BloodForm, VolunteerForm, HospitalRelatedForm
 from .models import Doctor, HospitalRelated, Hospital, Blood, Volunteer
 
 
 # Create your views here.
+@login_required
 def admin_home(request):
     hospitals = Hospital.objects.all()
     doctors = Doctor.objects.all()
@@ -25,6 +27,7 @@ def admin_home(request):
 # --------------------------------------------------------------------
 
 # register
+
 def register_view(request):
     form = RegistrationForm()
     if request.method == 'POST':
@@ -68,15 +71,16 @@ def logout(request):
 # -----------------------------------------------------------------------
 
 # hospital views
-
+@login_required
 def admin_hospital_list(request):
     hospitals = Hospital.objects.all()
     context = {
         'hospitals': hospitals,
     }
-    return render(request, 'admin_hospital_list.html', context)
+    return render(request, 'apps/admin_hospital_list.html', context)
 
 
+@login_required
 def admin_hospital_detail(request, pk):
     hospitals = Hospital.objects.get(id=pk)
     context = {
@@ -85,6 +89,7 @@ def admin_hospital_detail(request, pk):
     return render(request, 'apps/admin_hospital_detail.html', context)
 
 
+@login_required
 def admin_hospital_create(request):
     form = HospitalForm()
     if request.method == 'POST':
@@ -100,6 +105,7 @@ def admin_hospital_create(request):
     return render(request, 'apps/admin_hospital_create.html', context)
 
 
+@login_required
 def admin_hospital_update(request, pk):
     hospitals = Hospital.objects.get(id=pk)
     form = HospitalForm(instance=hospitals)
@@ -118,6 +124,7 @@ def admin_hospital_update(request, pk):
     return render(request, 'apps/admin_hospital_update.html', context)
 
 
+@login_required
 def admin_hospital_delete(request, pk):
     hospitals = Hospital.objects.get(id=pk)
     if request.method == 'POST':
@@ -136,7 +143,7 @@ def admin_doctor_list(request):
     context = {
         'doctors': doctors,
     }
-    return render(request, 'admin_doctor_list.html', context)
+    return render(request, 'apps/admin_doctor_list.html', context)
 
 
 def admin_doctor_detail(request, pk):
@@ -199,7 +206,7 @@ def admin_blood_list(request):
     context = {
         'bloods': bloods,
     }
-    return render(request, 'admin_blood_list.html', context)
+    return render(request, 'apps/admin_blood_list.html', context)
 
 
 def admin_blood_detail(request, pk):
@@ -261,7 +268,7 @@ def admin_volunteer_list(request):
     context = {
         'volunteers': volunteers,
     }
-    return render(request, 'admin_volunteer_list.html', context)
+    return render(request, 'apps/admin_volunteer_list.html', context)
 
 
 def admin_volunteer_detail(request, pk):
@@ -323,7 +330,7 @@ def admin_hospital_related_list(request):
     context = {
         'hospital_relates': hospital_relates,
     }
-    return render(request, 'admin_hospital_related_list.html', context)
+    return render(request, 'apps/admin_hospital_related_list.html', context)
 
 
 def admin_hospital_related_detail(request, pk):

@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}hospital detail {% endblock title %}
+
+
+{% block content %}
+
+<h3>the details of hospital are :</h3>
+
+<table border="1">
+    <tr>
+        <th>Hospital Name</th>
+        <th>Hospital Address</th>
+        <th>Hospital Email</th>
+        <th>Hospital Contact No</th>
+        <th></th>
+        <th></th>
+    </tr>
+    <tr>
+        <td>{{ hospitals.name }}</td>
+        <td>{{ hospitals.address }}</td>
+        <td>{{ hospitals.email }}</td>
+        <td>{{ hospitals.contact_no }}</td>
+        <td><a href="{% url 'admin_hospital_update' hospitals.pk %}">Update</a>
+        </td>
+        <td><a href="{% url 'admin_hospital_delete' hospitals.pk %}">Delete</a>
+        </td>
+    </tr>
+</table>
+
+
+{% endblock content %}

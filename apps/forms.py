@@ -14,7 +14,7 @@ class RegistrationForm(UserCreationForm):
 
 # ------------------------------------------------------------------------
 class HospitalForm(ModelForm):
-    class MetaL:
+    class Meta:
         model = Hospital
         fields = ['name', 'email', 'address', 'contact_no', 'hospital_image']
 
