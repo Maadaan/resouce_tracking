@@ -1,8 +1,29 @@
 {% extends 'user_base.html' %}
 
-{% block title %}hospital list {% endblock title %}
+{% block title %}hospital details {% endblock title %}
 
 {% block content %}
 
 <h1>hospital details</h1>
+<a href="{% url 'dashboard' %}">back to home</a> <br>
+<br>
+<a href="{% url 'hospital_list' %}">back to hospital list</a> <br>
+<br>
+<br>
+<table border="1">
+    <tr>
+        <th>Hospital Name</th>
+        <th>Hospital Email</th>
+        <th>Hospital Address</th>
+        <th>Hospital Contact Details</th>
+        <th>Hospital Images</th>
+    </tr>
+    <tr>
+        <td> {{ hospitals.name }}</td>
+        <td> {{ hospitals.email }}</td>
+        <td> {{ hospitals.address }}</td>
+        <td> {{ hospitals.contact_no }}</td>
+        <td> {{ hospitals.hospital_image.url }}</td>
+    </tr>
+</table>
 {% endblock content %}

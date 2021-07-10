@@ -1,0 +1,37 @@
+{% extends 'user_base.html' %}
+
+{% block title %}hospital resources details {% endblock title %}
+
+{% block content %}
+
+<h1>hospital resources</h1>
+<a href="{% url 'dashboard' %}">back to home</a> <br>
+<br>
+<a href="{% url 'hospital_related_list' %}">back to hospital resources list</a> <br>
+<br>
+<br>
+<table border="1">
+    <tr>
+        <th>Hospital Name</th>
+        <th>Doctor Name</th>
+        <th>Volunteer Name</th>
+        <th>Doctor Availability</th>
+        <th>Ambulance Availability</th>
+        <th>Blood Availability</th>
+        <th>Bed Availability</th>
+        <th>Oxygen Availability</th>
+    </tr>
+
+    <tr>
+        <td>{{ hospital_relates.hospital.name }}</td>
+        <td>{{ hospital_relates.doctor.name }}</td>
+        <td>{{ hospital_relates.volunteer.name }}</td>
+        <td>{{ hospital_relates.has_doctor }}</td>
+        <td>{{ hospital_relates.has_ambulance }}</td>
+        <td>{{ hospital_relates.has_blood }}</td>
+        <td>{{ hospital_relates.has_bed }}</td>
+        <td>{{ hospital_relates.has_oxygen }}</td>
+    </tr>
+</table>
+
+{% endblock content %}

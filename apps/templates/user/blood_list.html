@@ -1,0 +1,17 @@
+{% extends 'user_base.html' %}
+
+{% block title %}blood list {% endblock title %}
+
+{% block content %}
+<a href="{% url 'dashboard' %}">back to home</a> <br>
+
+<h1>blood list</h1>
+blood types :
+<br>
+<br>
+{% for blood in bloods %}
+<a href="{% url 'blood_detail' blood.pk %}"> {{ blood.hospital.name }}<br>
+</a>
+{% endfor %}
+
+{% endblock content %}

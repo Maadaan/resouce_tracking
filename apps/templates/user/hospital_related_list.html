@@ -1,0 +1,15 @@
+{% extends 'user_base.html' %}
+
+{% block title %}hospital related list {% endblock title %}
+
+{% block content %}
+<a href="{% url 'dashboard' %}">back to home</a> <br>
+
+<h1>Hospital related lists</h1>
+Hospital Resources  :
+{% for hospital_relate in hospital_relates %}
+<a href="{% url 'hospital_related_detail' hospital_relate.pk %}"> {{ hospital_relate.hospital.name }}
+</a>
+{% endfor %}
+
+{% endblock content %}

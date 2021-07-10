@@ -5,17 +5,13 @@
 
 {% block content %}
 
-<!--{% for hospital in hospitals %}-->
 
-<!--{{ hospital.name }}-->
-
-<!--{% endfor %}-->
-<h1 class="h1">hello</h1>
-<a href="">hospital</a>
-<a href="">doctor</a>
-<a href="">volunteer</a>
-<a href="">blood</a>
-<a href="">hospital related</a>
+<h1>hello</h1>
+<a href="{% url 'hospital_list' %}">hospital</a>
+<a href="{% url 'doctor_list' %}">doctor</a>
+<a href="{% url 'volunteer_list' %}">volunteer</a>
+<a href="{% url 'blood_list' %}">blood</a>
+<a href="{% url 'hospital_related_list' %}">hospital related</a>
 
 
 {% endblock content %}
