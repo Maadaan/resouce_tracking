@@ -3,11 +3,29 @@
 {% block title %}volunteer list {% endblock title %}
 
 {% block content %}
-<h1>list</h1>
-volunteer name :
+<h1 class="text-center my-2">list volunteer name:</h1>
+<div class="container">
+	<div class="row">
 {% for volunteer in volunteers %}
-<a href="{% url 'volunteer_detail' volunteer.pk %}"> {{ volunteer.name }}
-</a>
+<div class="col-md-4 mb-5">
+    <div class="card">
+        <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+            <img
+            src="{{volunteers.volunteer_image.url }}"
+            class="img-fluid card-img-top" style="height: 250px;"
+          />
+                  <a href="#!">
+                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                  </a>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">{{ volunteer.name }}</h5>
+                  <a href="{% url 'volunteer_detail' volunteer.pk %}" class="btn btn-primary">Learn More</a>
+                </div>
+              </div>
+        </div>
 {% endfor %}
+</div>
+</div>
 
 {% endblock content %}
