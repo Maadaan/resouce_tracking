@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}volunteer detail {% endblock title %}
+
+
+{% block content %}
+
+<h3>the details of volunteer are :</h3>
+
+<table border="1">
+    <tr>
+        <th>Hospital Name</th>
+        <th>Volunteer Name</th>
+        <th>Volunteer Email</th>
+        <th>Volunteer Contact No</th>
+        <th></th>
+        <th></th>
+    </tr>
+    <tr>
+        <td>{{ volunteers.hospital.name }}</td>
+        <td>{{ volunteers.name }}</td>
+        <td>{{ volunteers.email }}</td>
+        <td>{{ volunteers.contact_no }}</td>
+        <td><a href="{% url 'admin_volunteer_update' volunteers.pk %}">Update</a>
+        </td>
+        <td><a href="{% url 'admin_volunteer_delete' volunteers.pk %}">Delete</a>
+        </td>
+    </tr>
+</table>
+
+
+{% endblock content %}

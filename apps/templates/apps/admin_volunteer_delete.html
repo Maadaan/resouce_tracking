@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %} delete volunteer {% endblock title %}
+
+
+{% block content %}
+<p>Are you sure you want to delete {{ volunteers }}</p>
+<form action="{% url 'admin_volunteer_delete' volunteers.id %}" method="POST">
+    {% csrf_token %}
+    <a href="{% url 'admin_volunteer_list' %}">Cancel</a>
+    <input type="submit" name="Confirm">
+</form>
+
+{% endblock content %}

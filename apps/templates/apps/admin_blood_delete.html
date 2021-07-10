@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %} delete blood {% endblock title %}
+
+
+{% block content %}
+<p>Are you sure you want to delete {{ bloods }}</p>
+<form action="{% url 'admin_blood_delete' bloods.id %}" method="POST">
+    {% csrf_token %}
+    <a href="{% url 'admin_blood_list' %}">Cancel</a>
+    <input type="submit" name="Confirm">
+</form>
+
+{% endblock content %}
