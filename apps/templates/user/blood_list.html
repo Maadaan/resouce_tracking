@@ -3,15 +3,19 @@
 {% block title %}blood list {% endblock title %}
 
 {% block content %}
-<a href="{% url 'dashboard' %}">back to home</a> <br>
-
-<h1>blood list</h1>
-blood types :
+<h1 class="text-center my-2">Blood Lists</h1>
 <br>
-<br>
+<table class="table table-striped text-center">
+    <tr>
+        <th>Hospital Name</th>
+        <th>Blood Types</th>
+    </tr>
 {% for blood in bloods %}
-<a href="{% url 'blood_detail' blood.pk %}"> {{ blood.hospital.name }}<br>
-</a>
+    <tr>
+        <td> {{ blood.hospital.name }}</td>
+        <td> {{ blood.blood_type }}</td>
+    </tr>
 {% endfor %}
+</table>
 
 {% endblock content %}
