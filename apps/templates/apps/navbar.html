@@ -9,13 +9,17 @@
           <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0 text-right">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                <a class="nav-link active" aria-current="page" href="{% url 'dashboard' %}">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Hospitals</a>
+                <a class="nav-link active" aria-current="page" href="{% url 'hospital_list' %}">Hospitals</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Blood Bank</a>
+                <a class="nav-link active" aria-current="page" href="{% url 'doctor_list' %}">Doctors</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'blood_list' %}">Blood Bank</a>
+              </li>
               </li>
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="#">Oxygen</a>
@@ -24,10 +28,6 @@
                 <a class="nav-link active" aria-current="page" href="#">Log in</a>
               </li>
             </ul>
-            <form class="d-flex">
-              <input class="form-control me-2 ms-4" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-light" type="submit">Search</button>
-            </form>
           </div>
         </div>
       </nav>
