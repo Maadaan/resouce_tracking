@@ -3,7 +3,7 @@
 {% block title %}hospital related list {% endblock title %}
 
 {% block content %}
-<h1>Hospital related lists</h1>
+<h1 class="text-center my-2">Hospital related lists</h1>
 Hospital Resources  :
 {% for hospital_relate in hospital_relates %}
 <a href="{% url 'hospital_related_detail' hospital_relate.pk %}"> {{ hospital_relate.hospital.name }}
