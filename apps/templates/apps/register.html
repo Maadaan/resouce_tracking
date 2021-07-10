@@ -1,10 +1,22 @@
 {% extends 'base.html' %}
 
-{% block title %} register admin {% endblock title %}
+{% block title %} Admin - Register {% endblock title %}
+
+{% block head %}
+<style>
+.form-signin {
+    width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+}
+</style>
+{% endblock head %}
 
 {% block content %}
 
-<h1>Register</h1>
+<main class="form-signin">
+    <h1>Register</h1>
 <form action="/login/" method="POST">
     {% csrf_token %}
     <label for="username">Username</label>
