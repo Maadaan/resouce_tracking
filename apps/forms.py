@@ -7,6 +7,12 @@ from .models import Hospital, Doctor, Volunteer, Blood, HospitalRelated
 
 # ---------------------------------
 class RegistrationForm(UserCreationForm):
+    def __init__(self, *args, **kwargs):
+        super(UserCreationForm, self).__init__(*args, **kwargs)
+        for field in iter(self.fields):
+            self.fields[field].widget.attrs.update({
+                'class': 'form-control'
+        })
     class Meta:
         model = User
         fields = ['username', 'email', 'password1', 'password2']
