@@ -13,16 +13,16 @@
   overflow-y: auto;
 }
     </style>
+
+    {% block head %}{% endblock head %}
 </head>
 <body>
 
 {% include 'apps/navbar.html' %}
-<hr>
 
 {% block content %}
 
 {% endblock content %}
-<hr>
 
 {% include 'apps/footer.html' %}
 
