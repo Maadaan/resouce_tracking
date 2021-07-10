@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}Blood banks List{% endblock title %}
+
+{% block content %}
+<br>
+<a href="{% url 'admin_blood_create' %}">create blood bank</a>
+
+<h1>The list of hospitals are:</h1>
+{% for blood in bloods %}
+<a href="{% url 'admin_blood_detail' blood.pk %}"> {{ hospital.name }}</a>
+<br>
+<br>
+{% endfor %}
+
+
+<br>
+
+
+{% endblock content %}

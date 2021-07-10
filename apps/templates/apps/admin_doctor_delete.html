@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %} delete doctor {% endblock title %}
+
+
+{% block content %}
+<p>Are you sure you want to delete {{ doctors }}</p>
+<form action="{% url 'admin_doctor_delete' doctors.id %}" method="POST">
+    {% csrf_token %}
+    <a href="{% url 'admin_doctor_list' %}">Cancel</a>
+    <input type="submit" name="Confirm">
+</form>
+
+{% endblock content %}

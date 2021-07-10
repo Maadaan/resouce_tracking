@@ -1,13 +1,12 @@
 from django.contrib import messages
 from django.contrib.auth import authenticate, login
-from django.contrib.auth.decorators import login_required
+# from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from .forms import RegistrationForm, HospitalForm, DoctorForm, BloodForm, VolunteerForm, HospitalRelatedForm
 from .models import Doctor, HospitalRelated, Hospital, Blood, Volunteer
 
 
 # Create your views here.
-@login_required
 def admin_home(request):
     hospitals = Hospital.objects.all()
     doctors = Doctor.objects.all()
@@ -71,7 +70,6 @@ def logout(request):
 # -----------------------------------------------------------------------
 
 # hospital views
-@login_required
 def admin_hospital_list(request):
     hospitals = Hospital.objects.all()
     context = {
@@ -80,7 +78,6 @@ def admin_hospital_list(request):
     return render(request, 'apps/admin_hospital_list.html', context)
 
 
-@login_required
 def admin_hospital_detail(request, pk):
     hospitals = Hospital.objects.get(id=pk)
     context = {
@@ -89,7 +86,6 @@ def admin_hospital_detail(request, pk):
     return render(request, 'apps/admin_hospital_detail.html', context)
 
 
-@login_required
 def admin_hospital_create(request):
     form = HospitalForm()
     if request.method == 'POST':
@@ -105,7 +101,6 @@ def admin_hospital_create(request):
     return render(request, 'apps/admin_hospital_create.html', context)
 
 
-@login_required
 def admin_hospital_update(request, pk):
     hospitals = Hospital.objects.get(id=pk)
     form = HospitalForm(instance=hospitals)
@@ -124,7 +119,6 @@ def admin_hospital_update(request, pk):
     return render(request, 'apps/admin_hospital_update.html', context)
 
 
-@login_required
 def admin_hospital_delete(request, pk):
     hospitals = Hospital.objects.get(id=pk)
     if request.method == 'POST':
@@ -137,7 +131,6 @@ def admin_hospital_delete(request, pk):
 
 
 # -----------------------------------------doctors views -----------------------------------------
-
 def admin_doctor_list(request):
     doctors = Doctor.objects.all()
     context = {
@@ -200,7 +193,6 @@ def admin_doctor_delete(request, pk):
 # -------------------------------
 # ------blood views--------------
 
-
 def admin_blood_list(request):
     bloods = Blood.objects.all()
     context = {
@@ -261,7 +253,6 @@ def admin_blood_delete(request, pk):
 
 
 # ----------------------volunteer
-
 
 def admin_volunteer_list(request):
     volunteers = Volunteer.objects.all()

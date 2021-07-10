@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}blood detail {% endblock title %}
+
+
+{% block content %}
+
+<h3>the details of blood are :</h3>
+
+<table border="1">
+    <tr>
+        <th>Hospital Name</th>
+        <th>Blood Types</th>
+
+    </tr>
+    <tr>
+        <td>{{ bloods.hospitals.name }}</td>
+        <td>{{ hospitals.address }}</td>
+        <td>{{ hospitals.email }}</td>
+        <td>{{ hospitals.contact_no }}</td>
+        <td><a href="{% url 'admin_hospital_update' hospitals.pk %}">Update</a>
+        </td>
+        <td><a href="{% url 'admin_hospital_delete' hospitals.pk %}">Delete</a>
+        </td>
+    </tr>
+</table>
+
+
+{% endblock content %}
