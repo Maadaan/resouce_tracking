@@ -23,7 +23,7 @@
         <td> {{ hospitals.email }}</td>
         <td> {{ hospitals.address }}</td>
         <td> {{ hospitals.contact_no }}</td>
-        <td> {{ hospitals.hospital_image.url }}</td>
+        <td><img src={{ hospitals.hospital_image.url }} alt=""> </td>
     </tr>
 </table>
 {% endblock content %}
