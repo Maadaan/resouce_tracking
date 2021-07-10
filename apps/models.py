@@ -20,7 +20,7 @@ class Doctor(models.Model):
     email = models.EmailField(unique=True, blank=True, null=True)
     address = models.CharField(max_length=255)
     speciality = models.TextField()
-    ncm_no = models.CharField(max_length=10)
+    nmc_no = models.CharField(max_length=10)
     doctor_image = models.ImageField(upload_to='doctor_image')
 
     def __str__(self):
