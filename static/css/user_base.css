@@ -3,8 +3,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{% block title %} admin {% endblock title %}</title>
-    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <title>{% block title %} dashboard {% endblock title %}</title>
+    <link rel="stylesheet" href="{% static 'css/user_base.css' %}">
 </head>
 <body>
 
