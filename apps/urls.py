@@ -14,7 +14,7 @@ urlpatterns = [
     # for admins urls
     path('login/', login_view, name='login'),
     path('register/', register_view, name='register'),
-    path('admin_home', admin_home, name='admin_home'),
+    path('admin_home/', admin_home, name='admin_home'),
     # hospital
     path('admin_hospital_list', admin_hospital_list, name='admin_hospital_list'),
     path('admin_hospital_detail/<int:pk>/', admin_hospital_detail, name='admin_hospital_detail'),
