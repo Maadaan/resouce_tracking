@@ -74,7 +74,7 @@ def admin_hospital_list(request):
     context = {
         'hospitals': hospitals,
     }
-    return render(request, 'admin_hospital_list.html', context)
+    return render(request, 'apps/admin_hospital_list.html', context)
 
 
 def admin_hospital_detail(request, pk):
@@ -136,7 +136,7 @@ def admin_doctor_list(request):
     context = {
         'doctors': doctors,
     }
-    return render(request, 'admin_doctor_list.html', context)
+    return render(request, 'apps/admin_doctor_list.html', context)
 
 
 def admin_doctor_detail(request, pk):
@@ -199,7 +199,7 @@ def admin_blood_list(request):
     context = {
         'bloods': bloods,
     }
-    return render(request, 'admin_blood_list.html', context)
+    return render(request, 'apps/admin_blood_list.html', context)
 
 
 def admin_blood_detail(request, pk):
@@ -261,7 +261,7 @@ def admin_volunteer_list(request):
     context = {
         'volunteers': volunteers,
     }
-    return render(request, 'admin_volunteer_list.html', context)
+    return render(request, 'apps/admin_volunteer_list.html', context)
 
 
 def admin_volunteer_detail(request, pk):
@@ -323,7 +323,7 @@ def admin_hospital_related_list(request):
     context = {
         'hospital_relates': hospital_relates,
     }
-    return render(request, 'admin_hospital_related_list.html', context)
+    return render(request, 'apps/admin_hospital_related_list.html', context)
 
 
 def admin_hospital_related_detail(request, pk):
