@@ -1,63 +1,75 @@
 <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container-fluid">
-         <a class="navbar-brand" href="#">Covid Resource Tracker</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
+            <a class="navbar-brand" href="#">Covid Resource Tracker</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01"
+                    aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-          <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 text-right">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Hospitals</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Blood Bank</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Oxygen</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Log in</a>
-              </li>
-            </ul>
-            <form class="d-flex">
-              <input class="form-control me-2 ms-4" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-light" type="submit">Search</button>
-            </form>
-          </div>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 text-right">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'dashboard' %}">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'hospital_list' %}">Hospitals</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'doctor_list' %}">Doctors</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'blood_list' %}">Blood Bank</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'volunteer_list' %}">Volunteers</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'hospital_related_list' %}">Hospitals
+                            Resources</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Log in</a>
+                    </li>
+                </ul>
+
+            </div>
         </div>
-      </nav>
-  
+    </nav>
+
     <!-- Jumbotron -->
     <div class="p-5 text-center bg-light">
-      <h1 class="mb-3">Resource Locator</h1>
-      <h4 class="mb-3">Help for Panademic</h4>
-      <div class="container">
-      <p class="mb-3">Panademic and CoronaVirus have caused problem to all of us. Nepal was hit hard not only because we were careless but also
-          that we weren't prepared neither we could access the resources. Our main goal is connect people with the hospitals and resouces. Noone should die 
-          due to lack of access to the resources. Everything you need regarding covid and other health problems can be searched from here and get 
-          the location where you can get the required resources.
-      </p>
-    </div>
-      <a
-  class="btn btn-primary"
-  data-mdb-toggle="collapse"
-  href="#collapseWithScrollbar"
-  role="button"
-  aria-expanded="false"
-  aria-controls="collapseExample"
->
-Hospitals Near you
-</a>
+        <h1 class="mb-3">Resource Locator</h1>
+        <h4 class="mb-3">Help for Panademic</h4>
+        <div class="container">
+            <p class="mb-3">Panademic and CoronaVirus have caused problem to all of us. Nepal was hit hard not only
+                because we were careless but also
+                that we weren't prepared neither we could access the resources. Our main goal is connect people with the
+                hospitals and resouces. Noone should die
+                due to lack of access to the resources. Everything you need regarding covid and other health problems
+                can be searched from here and get
+                the location where you can get the required resources.
+            </p>
+        </div>
+        <a
+                class="btn btn-primary"
+                data-mdb-toggle="collapse"
+                href="#collapseWithScrollbar"
+                role="button"
+                aria-expanded="false"
+                aria-controls="collapseExample"
+        >
+            Hospitals Near you
+        </a>
 
-<!-- Collapsed content -->
-<div class="collapse mt-3 scroll-section" id="collapseWithScrollbar"  style="max-width: 500px">
-  Hospital are here
-</div>
+        <!-- Collapsed content -->
+        <div class="collapse mt-3 scroll-section" id="collapseWithScrollbar" style="max-width: 500px">
+            Hospital are here
+        </div>
     </div>
-  </header>
+</header>
 
