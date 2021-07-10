@@ -1,0 +1,44 @@
+{% extends 'user_base.html' %}
+
+{% block title %}doctor detail {% endblock title %}
+
+{% block content %}
+
+<h1>doctor details</h1>
+<a href="{% url 'dashboard' %}">back to home</a> <br>
+<br>
+<a href="{% url 'doctor_list' %}">back to doctor list</a> <br>
+<br>
+<br>
+
+<table border="1">
+    <tr>
+        <th>Doctor Name</th>
+        <th>Doctor Email</th>
+        <th>Doctor Address</th>
+        <th>Doctor Speciality</th>
+        <th>Doctor NMC Number</th>
+        <th>Doctor Contact Details</th>
+        <th>Doctor Images </th>
+    </tr>
+
+    <tr>
+        <td>{{ doctors.name }}</td>
+        <td>{{ doctors.email }}</td>
+        <td>{{ doctors.address }}</td>
+        <td>{{ doctors.speciality }}</td>
+        <td>{{ doctors.nmc_no }}</td>
+        <td>{{ doctors.contact_no }}</td>
+        <td>{{ doctors.hospital_image.url }}</td>
+    </tr>
+</table>
+Doctor Name: {{ doctors.name }}<br>
+Doctor Email: {{ doctors.email }}<br>
+Doctor Address: {{ doctors.address }}<br>
+Doctor Speciality: {{ doctors.speciality }}<br>
+Doctor NMC Number: {{ doctors.nmc_no }}<br>
+Doctor Contact Details :{{ doctors.contact_no }}<br>
+Doctor Images :{{ doctors.hospital_image.url }}
+
+
+{% endblock content %}
