@@ -16,7 +16,7 @@
                 src="https://www.biovoicenews.com/wp-content/uploads/2016/11/Hospital-696x392.jpg"
                 class="img-fluid" style="height: 250px;"
               />
-              <a href="#!">
+              <a href="{% url 'hospital_list' %}">
                 <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
               </a>
             </div>
@@ -25,7 +25,7 @@
               <p class="card-text">
                 Search the hospital near your which have resources you want.
               </p>
-              <a href="#!" class="btn btn-primary">Hospital</a>
+              <a href="{% url 'hospital_list' %}" class="btn btn-primary">Hospital</a>
             </div>
           </div>
     </div>
@@ -45,7 +45,7 @@
               <p class="card-text">
                Get information about the doctors available in Hospitals.
               </p>
-              <a href="#!" class="btn btn-primary">Doctors</a>
+              <a href="{% url 'doctor_list' %}" class="btn btn-primary">Doctors</a>
             </div>
           </div>
     </div>
@@ -56,7 +56,7 @@
                 src="https://www.nursingworld.org/~4aeb6f/globalassets/practiceandpolicy/work-environment/diverse-nurse-group.jpg"
                 class="img-fluid card-img-top" style="height: 250px;"
               />
-              <a href="#!">
+              <a href="{% url 'volunteer_list' %}">
                 <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
               </a>
             </div>
@@ -65,7 +65,7 @@
               <p class="card-text">
                 Learn about the number of volunteers working for making your panademic easier.
               </p>
-              <a href="#!" class="btn btn-primary">Volunteers</a>
+              <a href="{% url 'volunteer_list' %}" class="btn btn-primary">Volunteers</a>
             </div>
           </div>
     </div>
@@ -126,7 +126,7 @@
                     src="https://www.wallpapersin4k.org/wp-content/uploads/2017/04/Blood-Bank-Wallpaper-24.jpg"
                     class="img-fluid card-img-top" style="height: 250px;"
                   />
-                  <a href="#!">
+                  <a href="{% url 'blood_list' %}">
                     <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
                   </a>
                 </div>
@@ -135,7 +135,7 @@
                   <p class="card-text">
                     Check the availability of bloods in the respective health organiztion. 
                   </p>
-                  <a href="#!" class="btn btn-primary">Blood Bank</a>
+                  <a href="{% url 'blood_list' %}" class="btn btn-primary">Blood Bank</a>
                 </div>
               </div>
         </div>
