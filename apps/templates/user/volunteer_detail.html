@@ -3,14 +3,11 @@
 {% block title %}volunteer details {% endblock title %}
 
 {% block content %}
-
-<h1>volunteer details</h1>
-<a href="{% url 'dashboard' %}">back to home</a> <br>
-<br>
-<a href="{% url 'volunteer_list' %}">back to volunteer list</a> <br>
+<h1 class="text-center my-2">Volunteer details</h1>
+<a href="{% url 'volunteer_list' %}" class="btn btn-dark my-2 ms-2 py-auto">Volunteer List</a> <br>
 <br>
 <br>
-<table border="1">
+<table class="table table-striped">
     <tr>
         <th>Hospital Name</th>
         <th>Volunteer Name</th>
@@ -23,7 +20,6 @@
         <td>{{ volunteers.name }}</td>
         <td>{{ volunteers.email }}</td>
         <td>{{ volunteers.contact_no }}</td>
-        <td>{{ volunteers.volunteer_image.url }}</td>
 
     </tr>
 

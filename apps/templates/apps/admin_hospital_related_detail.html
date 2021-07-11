@@ -1,26 +1,25 @@
-{% extends 'user_base.html' %}
+{% extends 'base.html' %}
 
-{% block title %}hospital resources details {% endblock title %}
+{% block title %}hospital detail {% endblock title %}
+
 
 {% block content %}
 
-<h1>hospital resources</h1>
-<br>
-<a href="{% url 'hospital_related_list' %}" class="btn btn-dark my-2 ms-2 py-auto">Hospital Related</a> <br>
-<br>
-<br>
-<table class="table table-striped">
+<h3>the details of hospital are :</h3>
+
+<table border="1">
     <tr>
         <th>Hospital Name</th>
         <th>Doctor Name</th>
         <th>Volunteer Name</th>
-        <th>Doctor Availability</th>
-        <th>Ambulance Availability</th>
-        <th>Blood Availability</th>
-        <th>Bed Availability</th>
-        <th>Oxygen Availability</th>
+        <th>Has Doctor</th>
+        <th>Has Ambulance</th>
+        <th>Has Blood</th>
+        <th>Has Bed</th>
+        <th>Has Oxygen</th>
+        <th></th>
+        <th></th>
     </tr>
-
     <tr>
         <td>{{ hospital_relates.hospital.name }}</td>
         <td>{{ hospital_relates.doctor.name }}</td>
@@ -30,7 +29,14 @@
         <td>{{ hospital_relates.has_blood }}</td>
         <td>{{ hospital_relates.has_bed }}</td>
         <td>{{ hospital_relates.has_oxygen }}</td>
+
+
+        <td><a href="{% url 'admin_hospital_update' hospitals.pk %}">Update</a>
+        </td>
+        <td><a href="{% url 'admin_hospital_delete' hospitals.pk %}">Delete</a>
+        </td>
     </tr>
 </table>
+
 
 {% endblock content %}

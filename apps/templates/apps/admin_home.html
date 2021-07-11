@@ -1,6 +1,6 @@
 {% extends 'user_base.html' %}
 
-{% block title %} dashboard {% endblock title %}
+{% block title %} Admin - Dashboard {% endblock title %}
 
 
 {% block content %}
@@ -36,7 +36,7 @@
                 src="https://blog.ipleaders.in/wp-content/uploads/2018/02/BV-Acharya-3-696x464.jpg"
                 class="img-fluid card-img-top" style="height: 250px;"
               />
-              <a href="#!">
+              <a href="{% url 'doctor_list' %}">
                 <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
               </a>
             </div>
