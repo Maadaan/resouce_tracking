@@ -28,7 +28,26 @@ pip install Django==3.2.5
 
 Install required dependencies using the requirements.txt file.
 ```
-pip install -r requirements.txt
+pip install -r requirement.txt
+```
+
+After this we have to makemigrations
+```
+python manage.py makemigrations
+```
+
+And migrate
+```
+python manage.py migrate
+```
+Create superuser
+```
+python manage.py createsuperuser
+```
+
+Finally run the server 
+```
+python manage.py runserver
 ```
 
 ## Features
