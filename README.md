@@ -7,6 +7,25 @@ Covid Resource tracker is a Django-based web application to simplify the search 
 
 It is a Django-based project. 
 
+Create a virtual environment using 
+```
+python -m venv .env
+```
+Then create django project .
+```
+django-admin startproject project .
+```
+
+Then activate virtual environment using
+```
+source .env/bin/activate
+```
+
+Then install django using
+```
+pip install Django==3.2.5
+```
+
 Install required dependencies using the requirements.txt file.
 ```
 pip install -r requirements.txt
